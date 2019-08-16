@@ -1,5 +1,5 @@
 ## Load row data set
-flights <- read.csv("/Users/vito/Documents/Github/R/FIT5142/DelayedFlights.csv", header = TRUE)
+flights <- read.csv("./DelayedFlights.csv", header = TRUE)
 
 
 ## Overview of the raw data
@@ -532,10 +532,10 @@ str(Flights_DataSet)
 #===================================================================================
 
 # Flights_Target
-write.csv(OneHot_IsDelayedFlight, "/Users/vito/Desktop/Flights_Target.csv", row.names = FALSE)
+write.csv(OneHot_IsDelayedFlight, "./Processed_Flights_Target.csv", row.names = FALSE)
 
 # Flights_DataSet
-write.csv(Flights_DataSet, "/Users/vito/Desktop/Flights_DataSet.csv", row.names = FALSE)
+write.csv(Flights_DataSet, "./Processed_Flights_DataSet.csv", row.names = FALSE)
 
 
 
