@@ -42,7 +42,7 @@ init = tf.global_variables_initializer()
 sess = tf.Session()
 sess.run(init)
 
-Iterations = 50000
+Iterations = 25000
 
 batch_size = 100
 start = 0

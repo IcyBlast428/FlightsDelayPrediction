@@ -384,9 +384,9 @@ varImpPlot(rf.5)
 str(reshuffledFlights)
 
 flightsDataSet <- reshuffledFlights[1:100000, c("UniqueCarrier", "DayOfWeek", "Month", "DepTime", "DepDelay", "CRSDepTime", "TaxiOut", "IsDelayedFlight")]
-flightsDataSet$IsDelayedFlight <- as.numeric(flightsDataSet$IsDelayedFlight)
-
-str(flightsDataSet)
+flightsDataSet$IsDelayedFlight <- factor(flightsDataSet$IsDelayedFlight,
+                                         levels = c(0, 1),
+                                         labels = c("0", "1"))
 
 flightsDataSet$DayOfWeek <- factor(flightsDataSet$DayOfWeek,
                                    levels = c("1", "2", "3", "4", "5", "6", "7"),
@@ -481,7 +481,7 @@ str(OneHot_UniqueCarrier)
 
 
 # UniqueCarrier
-levels_IsDelayedFlight <- length(levels(flightsDataSet$IsDelayedFlight))
+levels_IsDelayedFlight <- length(levels(flightsDataSet$IsDelayedFlight)) ################
 OneHot_IsDelayedFlight <- as.data.frame(matrix(numeric(0), ncol = levels_IsDelayedFlight))
 
 for (i in 1:levels_IsDelayedFlight) {
